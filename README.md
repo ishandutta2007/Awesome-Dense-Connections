@@ -1,5 +1,7 @@
-# Awesome-Dense-Connections
-## Dense Connections in AI: History, Progression, Variants, & Applications
+# 🧠 Awesome-Dense-Connections
+
+![Banner](assets/banner.svg)
+## 🌐 Dense Connections in AI: History, Progression, Variants, & Applications: History, Progression, Variants, & Applications
 
 A **Dense Connection**—formally conceptualized as a cross-layer feature concatenation or dense skip shortcut—is a foundational architectural routing paradigm in deep convolutional and transformer-based neural networks. Introduced by Gao Huang, Zhuang Liu, Laurens van der Maaten, and Kilian Q. Weinberger in 2016 ("Densely Connected Convolutional Networks"), dense connections modify how layer representations propagate down a model's computational graph. 
 
@@ -7,7 +9,7 @@ While traditional deep learning pipelines pass information sequentially from lay
 
 ---
 
-## 1. The Macro Chronological Evolution
+## 🕰️ 1. The Macro Chronological Evolution
 
 The implementation of feature propagation has transitioned from rigid sequential feed-forward stacks to linear shortcut additions, cross-layer dense concatenations, and modern multi-modal token-fused parallel attention layers.
 
@@ -28,7 +30,7 @@ flowchart LR
 
 ---
 
-## 2. Core Functional & Structural Variants
+## 🏗️ 2. Core Functional & Structural Variants
 
 Dense Connection architectures are strictly categorized based on the exact tensor dimensions they concatenate and the parameter routing patterns they enforce.
 
@@ -41,7 +43,7 @@ Dense Connection architectures are strictly categorized based on the exact tenso
 
 ---
 
-## 3. The Dense Block Execution Matrix
+## ⚙️ 3. The Dense Block Execution Matrix
 
 To concatenate and forward massive multi-channel tensors without triggering data transit delays, the structural execution graph collapses layer boundaries via channel-stacking subroutines.
 
@@ -81,7 +83,7 @@ C3 --> Y["Dense Block Output"]
 
 ---
 
-## 4. Production Engineering Challenges & Hardware Solutions
+## 🛠️ 4. Production Engineering Challenges & Hardware Solutions & Hardware Solutions
 
 Translating theoretical dense connection benefits onto modern parallel silicon configurations introduces intense memory bus and cache bottlenecks.
 
@@ -92,7 +94,7 @@ Translating theoretical dense connection benefits onto modern parallel silicon c
 
 ---
 
-## 5. Frontier Real-World AI Industrial Applications
+## 🌍 5. Frontier Real-World AI Industrial Applications
 
 | Application Area | Mechanism / Benefit | Year | Paper Link |
 |---|---|---|---|
