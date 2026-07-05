@@ -134,3 +134,14 @@ Before updating this documentation repository layout, let me know how you would 
 * I can generate a **Markdown matrix table** tracking the explicit growth rates ($k$), layer channels, and compression constants ($\theta$) used by leading computer vision networks to optimize model parameters.
 * I can write a detailed technical explanation focusing on the **mathematical proof of gradient propagation benefits** ($d\mathcal{L}/dx_0$) inside a densely connected network block where layers have direct connections to all preceding gradients.
 3 sitesPaper review: DenseNet -Densely Connected Convolutional Networks | by Mukul Khanna | TDS Archive9 Nov 2019 — The code of the DenseNet implementation can be found here. Since I am more comfortable with PyTorch, I'll try to explain the PyTor...Medium10 Open Source Computer Vision Repos You Should Know15 Mar 2024 — VGG: The classic VGG architecture boasts 478 papers with code.EncordPredictive modelling of Parkinson’s disease progression based on RNA-Sequence with densely connected deep recurrent neural networks | Scientific Reports12 Dec 2022 — The alternative text for this image may have been generated using AI. Dense Block (DB). Multiple composite blocks are stacked on t...Nature
+
+##  Star History
+<div align="center">
+<a href="https://www.star-history.com/?repos=ishandutta2007%2FAwesome-Dense-Connections&type=date&legend=bottom-right">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Dense-Connections&type=date&theme=dark&legend=bottom-right" />
+<source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Dense-Connections&type=date&legend=bottom-right" />
+<img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Dense-Connections&type=date&legend=bottom-right" />
+</picture>
+</a>
+</div>
