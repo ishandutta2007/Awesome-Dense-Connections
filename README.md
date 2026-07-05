@@ -12,7 +12,11 @@ While traditional deep learning pipelines pass information sequentially from lay
 The implementation of feature propagation has transitioned from rigid sequential feed-forward stacks to linear shortcut additions, cross-layer dense concatenations, and modern multi-modal token-fused parallel attention layers.
 
 ```mermaid
-[Plain Sequential Blocks (VGG, 2014)] ───> [Residual Addition Highways (ResNet, 2015)] ───> [Cross-Layer Concatenations (DenseNet, 2016)] ───> [Fused Feature Parallelism (Modern LLMs)](Exponential Deep Gradient Decay)           (Information-Dampening Summation Loops)         (Maximum Feature Reuse / Parameter Efficiency)     (Low-Rank Latent Cache Interleaving)
+flowchart LR
+    A["Plain Sequential Networks (VGG, 2014)<br/>(Deep Sequential Feature Extraction)"]
+    --> B["Residual Skip Connections (ResNet, 2015)<br/>(Identity Shortcut Learning)"]
+    --> C["Dense Connectivity (DenseNet, 2016)<br/>(Feature Reuse via Concatenation)"]
+    --> D["Parallel Feature Fusion (Modern LLMs)<br/>(Parallel Blocks & Fused Computation)"]
 ```
 
 *   **The Plain Sequential Processing Era (Traditional ConvNets, Pre-2015)**
@@ -56,7 +60,32 @@ Dense Connection architectures are strictly categorized based on the exact tenso
 To concatenate and forward massive multi-channel tensors without triggering data transit delays, the structural execution graph collapses layer boundaries via channel-stacking subroutines.
 
 ```mermaid
-Dense Block Feature Compounding[Input X₀] ───┬───────────────────────────────┬───────────────────────────────┐▼                               ▼                               ▼[Layer 1] ───> [Output X₁]          │                               ││              │                ▼                               │└──────┬───────┘            [Layer 2] ───> [Output X₂]          │▼                        │              │                ▼[Concatenate X₀, X₁]             └──────┬───────┘            [Layer 3]│                               ▼                        │└──────────────────────> [Concatenate X₀, X₁, X₂]        ▼│                [Concatenate All]└──────────────────────> │
+flowchart LR
+
+X0["Input X₀"]
+
+X0 --> L1["Layer 1"]
+L1 --> X1["Output X₁"]
+
+X0 --> C1["Concat(X₀, X₁)"]
+
+X1 --> C1
+C1 --> L2["Layer 2"]
+L2 --> X2["Output X₂"]
+
+X0 --> C2["Concat(X₀, X₁, X₂)"]
+X1 --> C2
+X2 --> C2
+
+C2 --> L3["Layer 3"]
+L3 --> X3["Output X₃"]
+
+X0 --> C3["Concatenate All Features"]
+X1 --> C3
+X2 --> C3
+X3 --> C3
+
+C3 --> Y["Dense Block Output"]
 ```
 
 *   **Growth Rate ($k$) Schedulers**
