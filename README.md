@@ -1,6 +1,12 @@
+<!-- SEO Meta Description: A curated list of resources, history, variants, and applications of Dense Connections in Deep Learning and AI. Explore DenseNets, execution matrices, and frontier applications. -->
 # 🧠 Awesome-Dense-Connections
 
 ![Banner](assets/banner.svg)
+
+<div align="center">
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+</div>
+
 ## 🌐 Dense Connections in AI: History, Progression, Variants, & Applications: History, Progression, Variants, & Applications
 
 A **Dense Connection**—formally conceptualized as a cross-layer feature concatenation or dense skip shortcut—is a foundational architectural routing paradigm in deep convolutional and transformer-based neural networks. Introduced by Gao Huang, Zhuang Liu, Laurens van der Maaten, and Kilian Q. Weinberger in 2016 ("Densely Connected Convolutional Networks"), dense connections modify how layer representations propagate down a model's computational graph. 
