@@ -34,20 +34,20 @@ The implementation of feature propagation has transitioned from rigid sequential
 
 Dense Connection architectures are strictly categorized based on the exact tensor dimensions they concatenate and the parameter routing patterns they enforce.
 
-### A. Vanilla Dense Blocks (Channel-Wise Concatenation)
-*   **Mechanism:** Operates on standard feature map grids. Each layer outputs a small, fixed number of new channels ($k$, designated as the **Growth Rate**). Layer 4 receives the initial input plus $3k$ total channels stacked side-by-side, passing its own output down to widen the input pool for Layer 5.
-*   **Pros:** Exceptional architectural parameter efficiency, allowing a network with only 20M parameters to match the performance of a 60M parameter ResNet on standard classification tasks.
+- ### A. Vanilla Dense Blocks (Channel-Wise Concatenation)
+	*   **Mechanism:** Operates on standard feature map grids. Each layer outputs a small, fixed number of new channels ($k$, designated as the **Growth Rate**). Layer 4 receives the initial input plus $3k$ total channels stacked side-by-side, passing its own output down to widen the input pool for Layer 5.
+	*   **Pros:** Exceptional architectural parameter efficiency, allowing a network with only 20M parameters to match the performance of a 60M parameter ResNet on standard classification tasks.
 
-### B. DenseNet-BC (Bottleneck & Compression)
-*   **Mechanism:** Implements a two-layer security valve to manage the severe channel-width inflation typical of dense blocks.
-    1.  *Bottleneck ($1 \times 1$ Conv):* Appends right before each $3 \times 3$ convolution to compress the massive incoming concatenated channel vector down to a fixed $4k$ thickness.
-    2.  *Transition Compression ($\theta$):* Appends between dense blocks, utilizing a scaling factor ($\theta \in (0, 1]$) to aggressively shrink total output channels by half before data streams to the next block.
+- ### B. DenseNet-BC (Bottleneck & Compression)
+	*   **Mechanism:** Implements a two-layer security valve to manage the severe channel-width inflation typical of dense blocks.
+	    1.  *Bottleneck ($1 \times 1$ Conv):* Appends right before each $3 \times 3$ convolution to compress the massive incoming concatenated channel vector down to a fixed $4k$ thickness.
+	    2.  *Transition Compression ($\theta$):* Appends between dense blocks, utilizing a scaling factor ($\theta \in (0, 1]$) to aggressively shrink total output channels by half before data streams to the next block.
 
-### C. Symmetrical Dense Encoder-Decoder Links (U-Net Dense Extensions)
-*   **Mechanism:** Tailored for pixel-level generation and semantic segmentation tasks. It hooks dense cross-layer concatenations across a symmetrical encoder-decoder topology, copying fine-grained geometric borders straight across the network graph to preserve spatial detail.
+- ### C. Symmetrical Dense Encoder-Decoder Links (U-Net Dense Extensions)
+	*   **Mechanism:** Tailored for pixel-level generation and semantic segmentation tasks. It hooks dense cross-layer concatenations across a symmetrical encoder-decoder topology, copying fine-grained geometric borders straight across the network graph to preserve spatial detail.
 
-### D. Multi-Scale Dense Networks (MSDN)
-*   **Mechanism:** Splits parameter routing across multiple spatial resolutions concurrently. The dense shortcuts connect layers both *horizontally* (across deep blocks at the same scale) and *vertically* (downsampling to coarser resolutions), optimizing fast inference routing for edge chipsets.
+- ### D. Multi-Scale Dense Networks (MSDN)
+	*   **Mechanism:** Splits parameter routing across multiple spatial resolutions concurrently. The dense shortcuts connect layers both *horizontally* (across deep blocks at the same scale) and *vertically* (downsampling to coarser resolutions), optimizing fast inference routing for edge chipsets.
 
 ---
 
